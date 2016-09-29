@@ -10,7 +10,7 @@ namespace StrategyPattern
     {
         public Airplane()
         {
-            
+            MoveBehavior = new Fly();
         }
     }
 }

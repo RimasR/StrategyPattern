@@ -10,7 +10,7 @@ namespace StrategyPattern
     {
         public Car()
         {
-            
+            MoveBehavior = new Drive();
         }
     }
 }

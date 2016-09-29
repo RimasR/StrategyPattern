@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,16 @@ namespace StrategyPattern
         public Vehicle()
         {
             
+        }
+
+        public void FuelConsumption()
+        {
+            MoveBehavior.FuelCunsuption(this);
+        }
+
+        public void Accelerate()
+        {
+            MoveBehavior.Accelerate(this);
         }
 
         public void Move()

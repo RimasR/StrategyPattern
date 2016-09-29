@@ -12,12 +12,14 @@ namespace StrategyPattern
             switch (Int32.Parse(Console.ReadLine()))
             {
                 case 1:
-                    car.MoveBehavior = new Drive();
+                    car.Accelerate();
+                    car.FuelConsumption();
                     car.Move();
                     break;
 
                 case 2:
-                    airplane.MoveBehavior = new Fly();
+                    airplane.Accelerate();
+                    airplane.FuelConsumption();
                     airplane.Move();
                     break;
             }

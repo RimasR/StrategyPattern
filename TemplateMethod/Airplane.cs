@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern
+namespace TemplateMethod
 {
-    class Fly : IMoveBehavior
+    class Airplane : Vehicle
     {
-        public void Accelerate(Vehicle vehicle)
+        public override void Accelerate()
         {
             Console.WriteLine("Intergalactical acceleration!!!");
         }
 
-        public void FuelCunsuption(Vehicle vehicle)
+        public override void FuelConsumption()
         {
             Console.WriteLine("ITS OVER 9000!!");
         }
 
-        public void Move(Vehicle vehicle)
+        public override void Move()
         {
             Console.WriteLine("I'm flying!");
         }

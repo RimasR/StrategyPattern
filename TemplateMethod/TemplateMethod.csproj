@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{35A537BD-1BF8-4593-9299-BC45DA04DC91}</ProjectGuid>
+    <ProjectGuid>{DCCE926D-01DE-4F8C-98D6-F24C16AD2DF5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StrategyPattern</RootNamespace>
-    <AssemblyName>StrategyPattern</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>TemplateMethod</RootNamespace>
+    <AssemblyName>TemplateMethod</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -45,12 +45,9 @@
   <ItemGroup>
     <Compile Include="Airplane.cs" />
     <Compile Include="Car.cs" />
-    <Compile Include="Drive.cs" />
-    <Compile Include="Fly.cs" />
-    <Compile Include="IMoveBehavior.cs" />
-    <Compile Include="Vehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,5 +10,11 @@ namespace StrategyPattern
     interface IMoveBehavior
     {
         void Move(Vehicle vehicle);
+
+        void Accelerate(Vehicle vehicle);
+
+        void FuelCunsuption(Vehicle vehicle);
+
+
     }
 }
