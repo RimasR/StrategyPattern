@@ -48,16 +48,14 @@ namespace StrategyPattern
             weight = 1500000;
         }
 
-        public bool IsIntergalacticalSpeedPossible()
+        public void Drive()
         {
-            FollowGps(turnsForMoon);
             if (crewOnBoard < 20)
             {
                 move.Accelerate(engine, weight);
                 move.ConsumeFuel(engine, fuel);
-                return true;
             }
-            return false;
+            FollowGps(turnsForMoon);
         }
 
         private void FollowGps(List<Turn> turns)
