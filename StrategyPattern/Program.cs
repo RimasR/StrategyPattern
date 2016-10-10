@@ -6,21 +6,16 @@ namespace StrategyPattern
     {
         private static void Main(string[] args)
         {
-            Car car = new Car();
-            Airplane airplane = new Airplane();
-
             switch (Int32.Parse(Console.ReadLine()))
             {
                 case 1:
-                    car.Accelerate();
-                    car.FuelConsumption();
-                    car.Move();
+                    Tesla tesla = new Tesla();
+                    tesla.Drive();
                     break;
 
                 case 2:
-                    airplane.Accelerate();
-                    airplane.FuelConsumption();
-                    airplane.Move();
+                    Spaceship spaceship = new Spaceship();
+                    Console.WriteLine($"Can we go intergalactical speeds? Answer:{ spaceship.IsIntergalacticalSpeedPossible()}");
                     break;
             }
         }

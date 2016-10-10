@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace TemplateMethod
 {
-    class Car : Vehicle
+    class Spaceship : Vehicle
     {
         public override void Accelerate()
         {
-            Console.WriteLine("Slowly accelerating...");
+            Console.WriteLine("Intergalactical acceleration!!!");
         }
 
         public override void FuelConsumption()
         {
-            Console.WriteLine("Consuming fuel in a reasonable amount.");
+            Console.WriteLine("ITS OVER 9000!!");
         }
 
         public override void Move()
         {
-            Console.WriteLine("I'm driving!");
+            Console.WriteLine("I'm flying!");
         }
     }
 }

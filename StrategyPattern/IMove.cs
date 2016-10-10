@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace StrategyPattern
 {
-    class Car : Vehicle
+    interface IMove
     {
-        public Car()
-        {
-            MoveBehavior = new Drive();
-        }
+        void Accelerate(Engine engine, double weight);
+        void ConsumeFuel(Engine engine, Fuel fuel);
+        void Turn(Turn turn);
     }
 }

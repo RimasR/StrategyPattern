@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern
+namespace TemplateMethod
 {
-    class Drive : IMoveBehavior
+    class Tesla : Vehicle
     {
-        public void Accelerate(Vehicle vehicle)
+        public override void Accelerate()
         {
             Console.WriteLine("Slowly accelerating...");
         }
 
-        public void FuelCunsuption(Vehicle vehicle)
+        public override void FuelConsumption()
         {
             Console.WriteLine("Consuming fuel in a reasonable amount.");
         }
 
-        public void Move(Vehicle vehicle)
+        public override void Move()
         {
             Console.WriteLine("I'm driving!");
         }

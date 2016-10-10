@@ -10,15 +10,15 @@ namespace TemplateMethod
     {
         static void Main(string[] args)
         {
-            Car car = new Car();
+            Tesla car = new Tesla();
             car.Accelerate();
             car.FuelConsumption();
             car.Move();
 
-            Airplane airplane = new Airplane();
-            airplane.Accelerate();
-            airplane.FuelConsumption();
-            airplane.Move();
+            Spaceship spaceship = new Spaceship();
+            spaceship.Accelerate();
+            spaceship.FuelConsumption();
+            spaceship.Move();
         }
     }
 }
