@@ -6,10 +6,24 @@ using System.Threading.Tasks;
 
 namespace TemplateMethod
 {
-    abstract public class Vehicle
+    public abstract class Vehicle
     {
-        public abstract void Move();
-        public abstract void FuelConsumption();
+
+        public List<Turn> turns;
+        public Engine engine;
+        public Fuel fuel;
+        public int peopleOnboard;
+        public double weight;
+
+        public abstract void Turn();
+        public abstract void ConsumeFuel();
         public abstract void Accelerate();
+
+        public void Drive()
+        {
+            Accelerate();
+            ConsumeFuel();
+            Turn();
+        }
     }
 }

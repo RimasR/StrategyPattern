@@ -8,19 +8,53 @@ namespace TemplateMethod
 {
     class Tesla : Vehicle
     {
+        public override void Turn()
+        {
+            turns = new List<Turn>
+            {
+                TemplateMethod.Turn.ReturnLeft(),
+                TemplateMethod.Turn.ReturnLeft(),
+                TemplateMethod.Turn.ReturnRight(),
+                TemplateMethod.Turn.ReturnLeft(),
+                TemplateMethod.Turn.ReturnRight()
+            };
+
+            foreach (Turn turn in turns)
+            {
+                Console.WriteLine($"{turn.Way}");
+            }
+        }
+
+        public override void ConsumeFuel()
+        {
+            fuel = new Fuel()
+            {
+                Amount = 150,
+                Type = "Electrolytes"
+            };
+            if (engine.Type == "Electric")
+            {
+                fuel.Amount = 0;
+            }
+            else
+            {
+                while (fuel.Amount > 0)
+                {
+                    fuel.Amount -= 1;
+                }
+            }
+        }
+
         public override void Accelerate()
         {
-            Console.WriteLine("Slowly accelerating...");
-        }
+            engine = new Engine()
+            {
+                Type = "Electric",
+                Torque = 200
+            };
+            var acceleration = engine.Torque / 2;
 
-        public override void FuelConsumption()
-        {
-            Console.WriteLine("Consuming fuel in a reasonable amount.");
-        }
-
-        public override void Move()
-        {
-            Console.WriteLine("I'm driving!");
+            Console.WriteLine($"Accelerating at {acceleration} m/s");
         }
     }
 }
