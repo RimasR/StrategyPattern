@@ -9,13 +9,13 @@ namespace StrategyPattern
             switch (Int32.Parse(Console.ReadLine()))
             {
                 case 1:
-                    Tesla tesla = new Tesla();
+                    Tesla tesla = new Tesla(new CarEngineStrategy(), new FullAutomationStrategy());
                     tesla.Drive();
                     break;
 
                 case 2:
-                    Spaceship spaceship = new Spaceship();
-                    Console.WriteLine($"Can we go intergalactical speeds? Answer:{ spaceship.IsIntergalacticalSpeedPossible()}");
+                    Spaceship spaceship = new Spaceship(new RocketEngineStrategy());
+                    spaceship.Drive();
                     break;
             }
         }

@@ -3,65 +3,23 @@ using System.Collections.Generic;
 
 namespace TemplateMethod
 {
-    public class Spaceship : Vehicle
+    public abstract class Spaceship
     {
+        public Engine engine;
+        public Fuel fuel;
+        public List<Turn> turns;
 
-        public override void Turn()
+        public abstract void Turn();
+
+        public abstract void ConsumeFuel();
+
+        public abstract void Accelerate();
+
+        public void Drive()
         {
-            turns = new List<Turn>
-            {
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnRight(),
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnRight(),
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnRight(),
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnRight()
-            };
-
-            foreach (Turn turn in turns)
-            {
-                Console.WriteLine($"{turn.Way}");
-            }
-        }
-
-        public override void ConsumeFuel()
-        {
-            fuel = new Fuel()
-            {
-                Amount = 15000,
-                Type = "Rocket fuel"
-            };
-            if (engine.Torque > 400)
-            {
-                while (fuel.Amount > 0)
-                {
-                    fuel.Amount -= 200;
-                }
-            }
-            else
-            {
-                while (fuel.Amount > 0)
-                {
-                    fuel.Amount -= 100;
-                }
-            }
-        }
-
-        public override void Accelerate()
-        {
-            engine = new Engine()
-            {
-                Type = "Rocket",
-                Torque = 500
-            };
-            weight = 1550000;
-            var acceleration = (engine.Torque - weight)/weight;
-
-            Console.WriteLine($"Accelerating at {acceleration} m/s");
+            Accelerate();
+            ConsumeFuel();
+            Turn();
         }
     }
 }

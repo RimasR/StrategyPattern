@@ -46,11 +46,14 @@
     <Compile Include="Engine.cs" />
     <Compile Include="Fuel.cs" />
     <Compile Include="Spaceship.cs" />
-    <Compile Include="Tesla.cs" />
+    <Compile Include="SpaceshipWithElectricEnigne.cs" />
+    <Compile Include="SpaceshipWithRocketEngine.cs" />
+    <Compile Include="TeslaWithElectricEngineWithFullAutomation.cs" />
+    <Compile Include="TeslaWithRocketEngineWithPartialAutomation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Turn.cs" />
-    <Compile Include="Vehicle.cs" />
+    <Compile Include="Tesla.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -46,7 +46,10 @@
     <Compile Include="CarEngineStrategy.cs" />
     <Compile Include="Engine.cs" />
     <Compile Include="Fuel.cs" />
+    <Compile Include="FullAutomationStrategy.cs" />
+    <Compile Include="IAutomate.cs" />
     <Compile Include="IMove.cs" />
+    <Compile Include="PartialAutomationStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RocketEngineStrategy.cs" />

@@ -1,60 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TemplateMethod
 {
-    class Tesla : Vehicle
+    public abstract class Tesla
     {
-        public override void Turn()
-        {
-            turns = new List<Turn>
-            {
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnRight(),
-                TemplateMethod.Turn.ReturnLeft(),
-                TemplateMethod.Turn.ReturnRight()
-            };
+        public List<Turn> turns;
+        public Engine engine;
+        public Fuel fuel;
 
-            foreach (Turn turn in turns)
-            {
-                Console.WriteLine($"{turn.Way}");
-            }
-        }
+        public abstract void Turn();
 
-        public override void ConsumeFuel()
+        public abstract void ConsumeFuel();
+
+        public abstract void Accelerate();
+
+        public abstract bool CruiseControl();
+
+        public abstract bool DriveAutomatically();
+
+        public void Drive()
         {
-            fuel = new Fuel()
+            Accelerate();
+            if (fuel.Amount > 0)
+                ConsumeFuel();
+            Turn();
+            if (DriveAutomatically() == true)
             {
-                Amount = 150,
-                Type = "Electrolytes"
-            };
-            if (engine.Type == "Electric")
-            {
-                fuel.Amount = 0;
+                Console.WriteLine("Driving automatically");
             }
             else
             {
-                while (fuel.Amount > 0)
+                if (CruiseControl() == true)
                 {
-                    fuel.Amount -= 1;
+                    Console.WriteLine("Tesla can use cruise control");
+                }
+                else
+                {
+                    Console.WriteLine("Tesla cant drive automatically");
                 }
             }
-        }
 
-        public override void Accelerate()
-        {
-            engine = new Engine()
-            {
-                Type = "Electric",
-                Torque = 200
-            };
-            var acceleration = engine.Torque / 2;
-
-            Console.WriteLine($"Accelerating at {acceleration} m/s");
+            Turn();
         }
     }
 }

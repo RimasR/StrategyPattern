@@ -16,9 +16,9 @@ namespace StrategyPattern
 
         public double weight;
 
-        public Spaceship()
+        public Spaceship(IMove move)
         {
-            move = new RocketEngineStrategy();
+            this.move = move;
             turnsForMoon = new List<Turn>
             {
                 Turn.ReturnLeft(),

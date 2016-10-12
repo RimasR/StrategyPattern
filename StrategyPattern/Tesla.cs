@@ -9,13 +9,15 @@ namespace StrategyPattern
         public Fuel fuel;
 
         private readonly IMove move;
+        private readonly IAutomate automate;
+        private readonly string transmission = "auto";
         public int PeopleOnBoard = 4;
 
         public List<Turn> turns;
 
         public double Weight = 1500;
 
-        public Tesla()
+        public Tesla(IMove move, IAutomate automate)
         {
             engine = new Engine
             {
@@ -23,7 +25,8 @@ namespace StrategyPattern
                 Type = "Electric"
             };
 
-            move = new CarEngineStrategy();
+            this.move = move;
+            this.automate = automate;
             fuel = new Fuel
             {
                 Amount = 500,
@@ -42,6 +45,7 @@ namespace StrategyPattern
 
         public void Drive()
         {
+            automate.DriveAutomatically(transmission);
             move.Accelerate(engine, Weight);
             if (PeopleOnBoard > 2)
 
