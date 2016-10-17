@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TemplateMethod
 {
-    class SpaceshipWithElectricEnigne : Spaceship
+    internal class SpaceshipWithElectricEnigne : Spaceship
     {
         public override void Turn()
         {
@@ -65,5 +62,4 @@ namespace TemplateMethod
             Console.WriteLine($"Accelerating at {acceleration} m/s");
         }
     }
-}
 }
